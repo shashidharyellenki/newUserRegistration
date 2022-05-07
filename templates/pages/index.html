@@ -17,39 +17,40 @@
         <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="nav-personal" role="tabpanel" aria-labelledby="nav-personal-Details-tab">
                 <div class="form-content">
-                    <form action="#">
+                    <form method="POST" action="{% url 'index' %}" >
+                        {% csrf_token %}
                         <div class="row">
                             <div class="col-sm-12 col-md-6">
                                 <label class="form-label">First Name<span>*</span></label>
-                                <input type="text"class="form-control" name="" id="Fname" placeholder="Enter your First Name">
+                                <input type="text"class="form-control" name="firstName" id="Fname" placeholder="Enter your First Name">
                             </div>
     
                             <div class="col-sm-12 col-md-6">
                                 <label class="form-label">Last Name<span>*</span></label>
-                                <input type="text"class="form-control" name="" id="Lname" placeholder="Enter your last Name">
+                                <input type="text"class="form-control" name="lastName" id="Lname" placeholder="Enter your last Name">
                             </div>
                         </div>
                         <div class="row mt-2">
                             <div class="col-md-6 col-sm-12">
                                 <label class="form-label">Email<span>*</span></label>
-                                <input type="email" name="" id="Email" placeholder="Enter your Email" class="form-control">
+                                <input type="email" name="email" id="Email" placeholder="Enter your Email" class="form-control">
                             </div>
                             <div class="col-sm-12 col-md-6">
                                 <label class="form-label">Profile Photo<span>*</span></label>
-                                <input type="file" class="form-control"name="" id="">
+                                <input type="file" class="form-control" name="profilephoto" id="">
                             </div>
                         </div>
                         <div class="row mt-2">
                             <div class="col-md-12 col-sm-12">
                                 <label class="form-label">A Short Bio<span>*</span></label>
-                                <textarea id="textarea-Bio"class="form-control" placeholder="A short Bio (not more than 30 words)" ></textarea>
+                                <textarea name="Bio" id="textarea-Bio"class="form-control" placeholder="A short Bio (not more than 30 words)" ></textarea>
     
                             </div>
                         </div>
                         <div class="row mt-2">
                             <div class="col-md-12 col-sm-12">
                                 <label class="form-label">Tags<span>*</span></label>
-                                <textarea id="textarea-Tag"class="form-control" placeholder="Eg: Data Science"></textarea>
+                                <textarea  name="Tag" id="textarea-Tag"class="form-control" placeholder="Eg: Data Science"></textarea>
                             </div>
                         </div><br>
                         <div class="bt">
@@ -58,7 +59,7 @@
                         <!-- <div  class="nav nav-tabs form-btns" id="nav-tab" role="tablist"></div>
                         <button class=" btn btn-primary Btns nav-link" id="nav-Acadamic-Details-tab" data-bs-toggle="tab" data-bs-target="#nav-Acadamic" type="button" role="tab" aria-controls="nav-Acadamic-Details" aria-selected="true" type="button">Acadamic Details</button>
                     </div> -->
-                    </form>
+                   
     
                 </div>
             </div>
@@ -70,41 +71,41 @@
     
                 <div class="tab-pane fade" id="nav-Acadamic" role="tabpanel" aria-labelledby="nav-Acadamic-Details-tab">
                     <div class="form-content">
-                        <form action="#">
+                       
                             <div class="row">
                                 <div class="col-sm-12 col-md-6">
                                     <label class="form-label">School Name<span>*</span></label>
-                                    <input type="text"class="form-control" name="" id="school" placeholder="school name">
+                                    <input type="text"class="form-control" name="school" id="school" placeholder="school name">
                                 </div>
     
                                 <div class="col-sm-12 col-md-6">
                                     <label class="form-label">Board<span>*</span></label>
-                                    <input type="text"class="form-control" name="" id="Board" placeholder="Ex:SSC,CBSE">
+                                    <input type="text"class="form-control" name="school-Board" id="Board" placeholder="Ex:SSC,CBSE">
                                 </div>
                             </div>
                             <div class="row mt-2">
                                 <div class="col-md-6 col-sm-12">
                                     <label class="form-label">Graduation<span>*</span></label>
-                                    <input type="text" name="" id="Graduation" placeholder="Ex:B-tech,BSC" class="form-control">
+                                    <input type="text" name="Graduation" id="Graduation" placeholder="Ex:B-tech,BSC" class="form-control">
                                 </div>
                                 <div class="col-sm-12 col-md-6">
                                     <label class="form-label">Graduation University<span>*</span></label>
-                                    <input type="text" name="" id="Graduation-university" placeholder="College Name" class="form-control">
+                                    <input type="text" name="GradUniversity" id="Graduation-university" placeholder="College Name" class="form-control">
                                 </div>
                             </div>
                             <div class="row mt-2">
                                 <div class="col-sm-12 col-md-6">
                                     <label class="form-label">Post Graduation<span>*</span></label>
-                                    <input type="text" name=""  id="postgrad" placeholder="Ex:M-tech,MSC" class="form-control">
+                                    <input type="text" name="PostGraduation"  id="postgrad" placeholder="Ex:M-tech,MSC" class="form-control">
                                 </div>
                                 <div class="col-sm-12 col-md-6">
                                     <label class="form-label">Post Graduation University<span>*</span></label>
-                                    <input type="text" name="" id="postUniversity" placeholder="college Name" class="form-control">
+                                    <input type="text" name="postGradUniversity" id="postUniversity" placeholder="college Name" class="form-control">
                                 </div>
                             </div><br>
                             <button type="button" class="btn btn-primary" onclick="previoustab()">Previous</button>
                             <button type="button" class="btn btn-primary" style="float:right" onclick="nexttab()">Next</button>
-                        </form>
+                        
                     </div>
                 </div>
     
@@ -113,65 +114,65 @@
     
                 <div class="tab-pane fade" id="nav-social" role="tabpanel" aria-labelledby="nav-Social-Handles-tab">
                     <div class="form-content">
-                        <form action="#">
+                       
                             <div class="row">
                                 <div class="col-sm-12 col-md-6">
                                     <label class="form-label">Linkedin<span>*</span></label>
-                                    <input type="text"class="form-control" name="" id="Linkedin" placeholder="Linkedin ID">
+                                    <input type="text"class="form-control" name="Linkedin" id="Linkedin" placeholder="Linkedin ID">
                                 </div>
     
                                 <div class="col-sm-12 col-md-6">
                                     <label class="form-label">Github<span>*</span></label>
-                                    <input type="text"class="form-control" name="Git" id="Git" placeholder="Github ID">
+                                    <input type="text"class="form-control" name="Github" id="Git" placeholder="Github ID">
                                 </div>
                             </div>
                             <div class="row mt-2">
                                 <div class="col-md-6 col-sm-12">
                                     <label class="form-label">Instagram<span>*</span></label>
-                                    <input type="text" name="" id="Insta" placeholder="Instagram ID" class="form-control">
+                                    <input type="text" name="Instagram" id="Insta" placeholder="Instagram ID" class="form-control">
                                 </div>
                                 <div class="col-sm-12 col-md-6">
                                     <label class="form-label">Facebook<span>*</span></label>
-                                    <input type="text" name="" id="FB" placeholder="Facebook ID" class="form-control">
+                                    <input type="text" name="Facebook" id="FB" placeholder="Facebook ID" class="form-control">
                                 </div>
                             </div><br>
                             <button type="button" class="btn btn-primary" onclick="previoustab1()">Previous</button>
                             <button type="button" class="btn btn-primary" style="float:right" onclick="nexttab1()">Next</button>     
-                        </form>
+                        
                     </div>
                 </div>
     
                 <!-- Work Experiance -->
                 <div class="tab-pane fade" id="nav-Work" role="tabpanel" aria-labelledby="nav-Work-Experience-tab">
-                    <div class="form-content">
-                        <form action="#" id="exp">
+                    <div class="form-content" id="exp">
+                        
                             <h3 class="pt-3">Work Experience 1</h3>
                             <div class="row">
                                 <div class="col-sm-12 col-md-6">
                                     <label class="form-label">Position<span>*</span></label>
-                                    <input type="text" class="form-control" name="" id="position0"  placeholder="Job role">
+                                    <input type="text" class="form-control" name="Position" id="position0"  placeholder="Job role">
                                 </div>
     
                                 <div class="col-sm-12 col-md-6">
                                     <label class="form-label">Organization<span>*</span></label>
-                                    <input type="text" class="form-control" name="" id="organization0" placeholder="Company">
+                                    <input type="text" class="form-control" name="Organization" id="organization0" placeholder="Company">
                                 </div>
                             </div>
                             <div class="row mt-2">
                                 <div class="col-md-6 col-sm-12">
                                     <label class="form-label">From<span>*</span></label>
-                                    <input type="date" name="" id="from0" class="form-control">
+                                    <input type="date" name="From" id="from0" class="form-control">
                                 </div>
                                 <div class="col-sm-12 col-md-6">
                                     <label class="form-label">To<span>*</span></label>
-                                    <input type="date" name="" id="to0" class="form-control">
+                                    <input type="date" name="to" id="to0" class="form-control">
                                 </div>
                             </div>
                             
                             
                             
                            
-                        </form>
+                       
                         <div class="row mt-3 mr-3">
                             <div class="col-sm-12" >
                                 <button type="button" class="btn btn-light" id="btn1" onclick="developeblock()">Add Block</button>
@@ -190,11 +191,12 @@
                     <div class="row" id="preview">    
                     </div><br>
                     <button type="button" class="btn btn-primary btn-md d-flex ms-auto mb-2" style="float:left" onclick="previoustab3()">Previous</button>
-                    <button type="button" class="btn btn-primary btn-md d-flex ms-auto">Submit</button>
+                    <input type="submit" class="btn btn-primary btn-md d-flex ms-auto" value="submit"></input>
                 </div>
-    
+            </form>
     
         </div>
     </div>
     </div>
+
 {% endblock %}

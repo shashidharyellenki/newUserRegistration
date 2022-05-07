@@ -15,7 +15,7 @@ class newUser(models.Model):
     Graduation = models.CharField(max_length=100, blank=False)
     GraduationUniversity = models.CharField(max_length=100, blank=False)
     postUniversity = models.CharField(max_length=100, blank=False)
-    postUniversity = models.CharField(max_length=100, blank=False)
+    postGradUniversity = models.CharField(max_length=100, blank=False)
     # social handles
     Linkedin = models.CharField(max_length=100, blank=False)
     facebook = models.CharField(max_length=100, blank=False)
