@@ -1,0 +1,25 @@
+//personal details
+
+firstname = charfield
+lastname = charfield
+email = email field
+photo = image field
+short bio = textfield
+tags?
+
+// Acadamic details
+schoolname = charfield
+boardname = charfield
+graduation = charfield
+graduation university = charfield
+post graduation =charfield
+post graduation university = charfield
+
+//social handles
+linkedIn github facebook Instagram = charfield
+
+//work experiance
+positon orgaization = charfield
+
+from to = datetime field
+
