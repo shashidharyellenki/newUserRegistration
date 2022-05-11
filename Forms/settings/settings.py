@@ -11,21 +11,25 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-
+# to set database in the heroku we are using the following command
+import dj_database_url #came form django-heruko command
+from dotenv import load_dotenv, find_dotenv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-nuhw@z4nw6osd#+8p&vplk464=lnh38%40+wbrpsnml_-)dq$o'
+# SECRET_KEY = 'django-insecure-nuhw@z4nw6osd#+8p&vplk464=lnh38%40+wbrpsnml_-)dq$o' predefiend
+SECRET_KEY = 'Forms_Django_Team_3' #Chnaged for production purpose
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []  predefiend
+ALLOWED_HOSTS = ['*'] #changed for production purspose
 
 
 # Application definition
@@ -38,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions'
 ]
 
 MIDDLEWARE = [
@@ -75,12 +80,10 @@ WSGI_APPLICATION = 'Forms.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+load_dotenv(find_dotenv())
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default':dj_database_url.config(default='sqlite:///db.sqlite3', conn_max_age=600, ssl_require=False)
 }
 
 
