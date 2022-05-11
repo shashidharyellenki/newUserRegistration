@@ -10,6 +10,7 @@ DEBUG=False
 ALLOWED_HOSTS=[
 
     'user-registrationstest.herukuapp.com',
+    'user.blog',
 ]
 DEBUG_PROPAGATE_EXCEPTIONS = True
 LOGGING = {
