@@ -9,5 +9,5 @@ DEBUG=False
 
 ALLOWED_HOSTS=[
 
-    'user-registration.herukuapp.com',
+    'user-registrationstest.herukuapp.com',
 ]
