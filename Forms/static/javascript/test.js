@@ -53,8 +53,7 @@ const year = date.getFullYear(); //2022
 
 //validating input fields
 
-Register.addEventListener('click',(e)=>{
-   e.preventDefault();
+Register.addEventListener('click',()=>{
 
     //validating passwords
     if(Password.value !== Confrim_Password.value){
