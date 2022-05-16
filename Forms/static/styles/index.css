@@ -48,13 +48,17 @@ label{
     font-size:15px;
     font-weight: 500;
 }
-.green{
-    color:green;
-}
-.blue{
-    color:blue;
-}
-input{
-    border:none;
-    border-color: red;
-}
+#fail{
+    border:3px solid red;
+    outline:2px;
+    }
+    
+    #success{
+        border:2px solid green
+    }
+    
+    input:focus{
+        outline: None;
+        box-shadow: none;
+        
+    }
