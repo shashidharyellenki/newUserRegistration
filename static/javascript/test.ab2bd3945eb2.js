@@ -59,8 +59,6 @@ Register.addEventListener('click',(e)=>{
     //validating passwords
     if(Password.value !== Confrim_Password.value){
         Register.disabled=true;
-        // alert("password and confrimpassword is not match")
-        //CSS Manipulation
           Password.id="fail"
           Confrim_Password.id="fail"
           let span_id = Password.parentElement.children[2];
@@ -107,7 +105,7 @@ Register.addEventListener('click',(e)=>{
         Username.id="success";
         Birthday_date.id="success";
         alert("Hey form submitted sucessfully!!");
-        
+        Register.disabled=false;
         
 
     }
