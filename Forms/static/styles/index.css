@@ -54,3 +54,7 @@ label{
 .blue{
     color:blue;
 }
+input{
+    border:none;
+    border-color: red;
+}
