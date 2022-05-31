@@ -21,13 +21,11 @@ components.forEach(component=>{
        let id_span = component.parentElement.children[2];
        if(component.value === "" ){
            id_span.innerHTML="feild can't be empty";
-           Register.disabled=true
           component.id="fail"
 
         }else{
             id_span.textContent="";
             component.id="success"
-            Register.disabled=true
         }
         if((FirstName.value !=""   && LastName.value !="" ) && (Email.value !=""  && Username.value  !="") &&( Password.value   !="" && Confrim_Password.value !="" )   && (Birthday_date.value  !=""  && phone.value  !="" ) ){
             Register.disabled=false
@@ -100,7 +98,7 @@ Register.addEventListener('click',()=>{
         span.innerHTML="Minimum age required for this course is 13"
     }
     //noticing user
-    if((FirstName!="" && LastName!="") && (Password.value === Confrim_Password.value) && (validateEmail.test(Email.value)) && (phone.value.length === 10) && ((year-userYear)>=13)){
+    if((Password.value === Confrim_Password.value) && (validateEmail.test(Email.value)) && (phone.value.length === 10) && ((year-userYear)>=13)){
         FirstName.id="success";
         LastName.id="success";
         Username.id="success";
