@@ -13,7 +13,7 @@ let components = [FirstName, LastName, Email, Username, Password, Confrim_Passwo
 // testing
 
 
-
+// test
 
 Register.disabled = true;
 components.forEach(component=>{
